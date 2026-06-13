@@ -13,7 +13,7 @@ public class RaposasVerm extends Animal{
     public void eat(List<SeresVivos> habitatAtual, List<SeresVivos> mortosNestePasso) {
         SeresVivos alimentoEncontrado = null;
         for (SeresVivos ser : habitatAtual) {
-            if (ser instanceof Pigmeu) {
+            if (ser instanceof Pigmeu && !mortosNestePasso.contains(ser)) {
                 alimentoEncontrado = ser;
                 break;
             }

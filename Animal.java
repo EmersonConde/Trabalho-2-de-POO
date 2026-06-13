@@ -5,7 +5,6 @@ abstract public class Animal implements SeresVivos{
     protected int probReprod;
     protected int taxaReprod;
     protected boolean bornStep;
-
     public Animal(){
         probReprod=0;
         taxaReprod=0;
@@ -30,15 +29,14 @@ abstract public class Animal implements SeresVivos{
     public abstract void eat(List<SeresVivos> habitatAtual, List<SeresVivos> mortosNestePasso);
     public void reprod(List<SeresVivos> novosSeres) {
         Random r = new Random();
-        int procriar = r.nextInt(101); // Permite gerar de 0 a 100 inclusive [cite: 18]
-        if (procriar <= probReprod) { // Regra exata do enunciado! [cite: 18]
+        int procriar = r.nextInt(101); // Permite gerar de 0 a 100 inclusive
+        if (procriar <= probReprod) { // Regra exata do enunciado!
             // Como cada espécie gera filhos de si mesma, a instanciação
             // real dos filhos será feita através de um método polimórfico
             // ou subcarregado nas subclasses.
             this.nascerFilhos(novosSeres);
         }
     }
-
     // Método auxiliar abstrato para que cada animal saiba como criar cópias de si mesmo
     protected abstract void nascerFilhos(List<SeresVivos> novosSeres);
     @Override

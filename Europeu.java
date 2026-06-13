@@ -12,7 +12,7 @@ public class Europeu extends Animal{
         SeresVivos alimentoEncontrado = null;
         //Procurar por um rosmaninho disponível no habitate
         for (SeresVivos ser : habitatAtual) {
-            if (ser instanceof Rosmaninho) {
+            if (ser instanceof Rosmaninho && !mortosNestePasso.contains(ser)) {
                 alimentoEncontrado = ser;
                 break; // Encontrou uma planta
             }

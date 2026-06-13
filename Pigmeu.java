@@ -15,7 +15,7 @@ public class Pigmeu extends Animal {
         SeresVivos alimentoEncontrado = null;
         //Procurar por uma Sálvia disponível no habitate
         for (SeresVivos ser : habitatAtual) {
-            if (ser instanceof Salvia) {
+            if (ser instanceof Salvia && !mortosNestePasso.contains(ser)) {
                 alimentoEncontrado = ser;
                 break; // Encontrou uma planta
             }

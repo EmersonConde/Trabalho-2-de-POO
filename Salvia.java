@@ -22,7 +22,7 @@ public class Salvia extends Planta{
     protected void nascerFilhos(List<SeresVivos> novosSeres) {
         // Aplica a taxa de reprodução: gera o número de filhos definido
         for (int i = 0; i < this.taxaReprod; i++) {
-            Pigmeu filhote = new Pigmeu(this.probReprod, this.taxaReprod);
+            Salvia filhote = new Salvia(this.probReprod, this.taxaReprod);
             novosSeres.add(filhote);
         }
         System.out.println("Foram gerados mais " + this.taxaReprod + " coelhos pigmeus");
