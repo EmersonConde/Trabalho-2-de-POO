@@ -30,6 +30,6 @@ public class RaposaVeloz extends Animal{
             RaposaVeloz filhote = new RaposaVeloz(this.probReprod, this.taxaReprod);
             novosSeres.add(filhote);
         }
-        System.out.println("Foram gerados mais " + this.taxaReprod + " coelhos pigmeus");
+        System.out.println("Foram gerados mais " + this.taxaReprod + " raposas velozes");
     }
 }

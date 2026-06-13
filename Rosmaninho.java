@@ -24,6 +24,6 @@ public class Rosmaninho extends Planta{
             Rosmaninho filhote = new Rosmaninho(this.probReprod, this.taxaReprod);
             novosSeres.add(filhote);
         }
-        System.out.println("Foram gerados mais " + this.taxaReprod + " coelhos pigmeus");
+        System.out.println("Foram gerados mais " + this.taxaReprod + " rosmaninhos");
     }
 }

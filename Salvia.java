@@ -4,9 +4,8 @@ import java.util.Random;
 public class Salvia extends Planta{
     // Construtores
     public Salvia() {
-        super(); // Chama o construtor de Planta
+        super();
     }
-    //Parametrizado
     public Salvia(int probReprod, int taxaReprod) {
         super(probReprod, taxaReprod);
     }
@@ -25,6 +24,6 @@ public class Salvia extends Planta{
             Salvia filhote = new Salvia(this.probReprod, this.taxaReprod);
             novosSeres.add(filhote);
         }
-        System.out.println("Foram gerados mais " + this.taxaReprod + " coelhos pigmeus");
+        System.out.println("Foram gerados mais " + this.taxaReprod + " salvia");
     }
 }

@@ -1,40 +1,17 @@
 import java.util.Scanner;
 
 public class InputValidation {
-    public static int validadeIntBetween(int max, int min, Scanner sc, String mensagem){
-        while(true){
-            System.out.println(mensagem);
-            int in;
-            if(sc.hasNextInt()){
-                in= sc.nextInt();
-                if( in>= min &&  in<= max){
-                    return in;
-                }
-                System.out.println("Selecione uma opcao valida entre"+max+"e"+min);
-                sc.nextLine();
-            }
-            else{
-                System.out.println("Valor invalido");
-                sc.nextLine();
-            }
+    public static int validadeIntBetween(int max, int min, Scanner sc, String mensagem) throws ValorInvalidoException {
+        System.out.println(mensagem);
+        if (!sc.hasNextInt()) {
+            sc.nextLine(); // Limpa o buffer de lixo que o utilizador digitou
+            throw new ValorInvalidoException("Erro: O valor inserido não é um número inteiro válido!");
         }
-    }
-    public static int validadeIntPos(Scanner sc,String mensagem){
-        while(true){
-            System.out.println(mensagem);
-            int i;
-            if(sc.hasNextInt()){
-                i= sc.nextInt();
-                if(i>=0){
-                    return i;
-                }
-                System.out.println("Valor negativo inserido, deve ser positivo");
-                sc.nextLine();
-            }
-            else {
-                System.out.println("Valor Invalido");
-                sc.nextLine();
-            }
+        int in = sc.nextInt();
+        sc.nextLine();
+        if (in < min || in > max) {
+            throw new ValorInvalidoException("Erro: O número " + in + " está fora dos limites permitidos [" + min + " e " + max + "]!");
         }
+        return in;
     }
 }

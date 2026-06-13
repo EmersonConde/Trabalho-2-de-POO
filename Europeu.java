@@ -31,6 +31,6 @@ public class Europeu extends Animal{
             Europeu filhote = new Europeu(this.probReprod, this.taxaReprod);
             novosSeres.add(filhote);
         }
-        System.out.println("Foram gerados mais " + this.taxaReprod + " coelhos pigmeus");
+        System.out.println("Foram gerados mais " + this.taxaReprod + " coelhos europeus");
     }
 }

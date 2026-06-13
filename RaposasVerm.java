@@ -32,6 +32,6 @@ public class RaposasVerm extends Animal{
             RaposasVerm filhote = new RaposasVerm(this.probReprod, this.taxaReprod);
             novosSeres.add(filhote);
         }
-        System.out.println("Foram gerados mais " + this.taxaReprod + " coelhos pigmeus");
+        System.out.println("Foram gerados mais " + this.taxaReprod + " raposas vermelhas");
     }
 }

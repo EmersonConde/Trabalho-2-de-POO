@@ -18,17 +18,24 @@ public class Main {
             if(option==1){preDef=false;}
             else{preDef=true;}
             if(!preDef){
-                for(especie=0;especie<6;especie++)
-                    iniciarNotPreDef(
-                            InputValidation.validadeIntBetween(20,1,sc,"Qual o valor exemplar da especie"+especie+"?")
-                            , habitat
-                            , especie
-                            ,InputValidation.validadeIntBetween(100,0,sc,"Insira um valor entre 100 e 0 para probabilidade de reproducao para a especie"+especie)
-                            ,InputValidation.validadeIntBetween(10,1,sc,"Insira uma taxa de reproducao para a especie"+especie)
-                    );
-            }
+                    for(especie=0;especie<6;especie++)
+                        try{
+                        iniciarNotPreDef(
+                                InputValidation.validadeIntBetween(20,1,sc,"Qual o valor exemplar da especie"+especie+"?")
+                                , habitat
+                                , especie
+                                ,InputValidation.validadeIntBetween(100,0,sc,"Insira um valor entre 100 e 0 para probabilidade de reproducao para a especie"+especie)
+                                ,InputValidation.validadeIntBetween(10,1,sc,"Insira uma taxa de reproducao para a especie"+especie)
+                        );
+                        option=0;
+                        }catch (ValorInvalidoException e) {
+                            System.out.println(e.getMessage()+" Reinciciando o valor da especie");
+                            especie--;
+                        }
+                }
             else{
                 iniciarPreDef(numEx, habitat,probRep,taxRep);
+                option=0;
             }
         }
         option=-1;
@@ -86,7 +93,7 @@ public class Main {
         ArrayList<SeresVivos> mortosNestePasso = new ArrayList<>();
         ArrayList<SeresVivos> novosSeres = new ArrayList<>();
         for(SeresVivos ser:habitat){
-            if(!(ser instanceof Planta)){
+            if(!(ser.isBornStep()) && !(ser instanceof Planta)){
                 Animal animal= (Animal) ser;
                 animal.eat(habitat,mortosNestePasso);
             }
