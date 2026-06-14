@@ -19,10 +19,10 @@ public class Europeu extends Animal{
         }
         if (alimentoEncontrado == null) {
             mortosNestePasso.add(this);
-            System.out.println("O coelho pigmeu, morreu à fome");
+            System.out.println("Um coelho europeu, morreu à fome");
         } else {
             mortosNestePasso.add(alimentoEncontrado);
-            System.out.println("Um coelho pigmeu comeu uma erva sálvia");
+            System.out.println("Um coelho europeu comeu um rosmaninho");
         }
     }
     @Override

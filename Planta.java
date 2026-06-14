@@ -33,10 +33,14 @@ abstract public class Planta implements SeresVivos{
     }
     @Override
     public boolean isBornStep() {
-        return false;
+        return bornStep;
     }
     @Override
     public void setBornStep(boolean bornStep) {
-
+        this.bornStep=bornStep;
     }
+    @Override
+    public int getProbRep() {return this.probReprod;}
+    @Override
+    public int getTaxRep() {return this.taxaReprod;}
 }

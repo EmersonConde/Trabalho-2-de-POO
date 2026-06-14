@@ -21,6 +21,10 @@ abstract public class Animal implements SeresVivos{
         return bornStep;
     }
     @Override
+    public int getProbRep() {return this.probReprod;}
+    @Override
+    public int getTaxRep() {return this.taxaReprod;}
+    @Override
     public void setBornStep(boolean bornStep) {
         this.bornStep = bornStep;
     }
@@ -43,4 +47,5 @@ abstract public class Animal implements SeresVivos{
     public void die() {
         System.out.println(this.getClass().getSimpleName() + " morreu.");
     }
+
 }
